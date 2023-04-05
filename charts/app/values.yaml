@@ -2,6 +2,11 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# creating namespace on argo
+ns:
+  create: false
+  name: ''
+
 replicaCount: 1
 
 replicasKind: Deployment

@@ -1,0 +1,6 @@
+{{- if .Values.ns.create}}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: "{{ .Values.ns.name }}"
+{{- end }}
