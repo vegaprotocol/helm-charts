@@ -2,5 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Validate=false
   name: "{{ trunc 60 .Values.ns.name }}"
 {{- end }}
