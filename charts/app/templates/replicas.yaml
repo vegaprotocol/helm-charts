@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: {{ .Values.replicasKind }}
 metadata:
   name: {{ include "app.fullname" . }}
+  {{- if .Values.ns.create }}
+  namespace: {{ trunc 60 .Values.ns.name }}
+  {{- end }}
   labels:
     {{- include "app.labels" . | nindent 4 }}
 spec:
