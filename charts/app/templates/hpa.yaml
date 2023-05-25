@@ -4,7 +4,7 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: {{ include "app.fullname" . }}
   {{- if .Values.ns.create }}
-  namespace: {{ trunc 60 (.Values.name | quote) }}
+  namespace: {{ trunc 60 .Values.ns.name }}
   {{- end }}
   labels:
     {{- include "app.labels" . | nindent 4 }}

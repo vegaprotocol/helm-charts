@@ -4,5 +4,5 @@ kind: Namespace
 metadata:
   annotations:
     argocd.argoproj.io/sync-options: Validate=false
-  name: {{ trunc 60 (.Values.name | quote) }}
+  name: "{{ trunc 60 .Values.ns.name }}"
 {{- end }}
