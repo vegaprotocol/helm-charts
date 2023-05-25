@@ -5,7 +5,7 @@ kind: ConfigMap
 metadata:
   name: {{ $name }}-{{ $settings.data | toYaml | sha256sum | trunc 8 }}
   {{- if .Values.ns.create }}
-  namespace: {{ toString (trunc 60 (.Values.name | quote)) }}
+  namespace: {{ trunc 60 (.Values.name | quote) }}
   {{- end }}
 data:
 {{- range $fileName, $fileContent := $settings.data }}

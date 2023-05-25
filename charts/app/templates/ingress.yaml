@@ -17,7 +17,7 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   {{- if .Values.ns.create }}
-  namespace: {{ toString (trunc 60 (.Values.name | quote)) }}
+  namespace: {{ trunc 60 (.Values.name | quote) }}
   {{- end }}
   labels:
     {{- include "app.labels" . | nindent 4 }}
