@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: {{ include "app.fullname" . }}
   {{- if .Values.ns.create }}
-  namespace: {{ trunc 60 .Values.ns.name | quote }}
+  namespace: {{ toString (trunc 60 (.Values.name | quote)) }}
   {{- end }}
   labels:
     {{- include "app.labels" . | nindent 4 }}
